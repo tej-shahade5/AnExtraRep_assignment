@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Details Form</title>
+  </head>
+  <body>
+    <!-- Details form -->
+    <h1>Patients Details</h1>
+    <form
+      action="process_form.php"
+      class="myForm"
+      method="post"
+      autocomplete="off"
+      enctype="multipart/form-data"
+    >
+      <button class="patientDetails" onclick="togglehealthReport()">
+        Input patients details
+      </button>
+      <div class="userDetails" id="userDetails">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Full Name*"
+          required
+        />
+        <input type="number" name="age" id="age" placeholder="Age" />
+        <input type="number" name="weight" id="weight" placeholder="Weight" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email Id*"
+          required
+        />
+        <label for="healthReport">Upload health Report*</label>
+        <input type="file" name="pdfFile" id="pdfFile" required />
+        <input type="submit" value="Submit" class="form-btn" />
+      </div>
+    </form>
+
+    <form action="fetch.php" method="post">
+      <div class="checkReport">
+          <button class="healthReport" onclick="toggleEmailSection()">
+            Check health report
+          </button>
+        <div class="email-section" id="email-section">
+          <form>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required />
+            <input class="form-btn" value="View" type="submit">
+          </form>
+        </div>
+      </div>
+    </form>
+
+    <!-- Javascript file -->
+    <script src="script.js"></script>
+  </body>
+</html>
